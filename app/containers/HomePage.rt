@@ -1,0 +1,7 @@
+<rt-require dependency="../components/cluster-options" as="Options"/>
+<rt-require dependency="../components/map" as="Map"/>
+
+<div>
+  <Options />
+  <Map clusterAmmount="{this.state.percent}" selectedCluster="{this.state.selectedCluster}"/>
+</div>

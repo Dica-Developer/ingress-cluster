@@ -1,0 +1,43 @@
+<rt-require dependency="react-bootstrap/lib/Row.js" as="Row"/>
+<rt-require dependency="react-bootstrap/lib/Col.js" as="Col"/>
+<rt-require dependency="react-bootstrap/lib/Input.js" as="Input"/>
+
+<Row>
+  <Col md={12}>
+  <form className='form-horizontal'>
+    <Row>
+      <Col md={6}>
+      <Input
+          label="Cluster"
+          value="{this.state.percent}"
+          ref="cluster-input"
+          rt-props="{ 'type': 'range', 'min': 1, 'max': 100, 'step': 1}"
+          labelClassName="col-xs-4"
+          wrapperClassName="col-xs-8"
+          addonAfter="{this.state.percent}%"
+          onChange="{this._handleNumberOfClusterChanged}"
+          />
+
+      </Col>
+      <Col md={6}>
+      <Input
+          type="select"
+          label="Show"
+          placeholder="Show"
+          labelClassName="col-xs-4"
+          wrapperClassName="col-xs-8"
+          onChange={this._handleDisplayClusterChanged}
+          >
+      <option
+          rt-repeat="cluster in this._getClusterOptions()"
+          value={cluster.nr}
+          key="{cluster.nr}"
+          eventKey={cluster.nr}
+          >{cluster.label}
+      </option>
+      </Input>
+      </Col>
+    </Row>
+  </form>
+  </Col>
+</Row>

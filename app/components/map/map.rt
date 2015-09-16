@@ -1,0 +1,12 @@
+<rt-require dependency="../cluster-info" as="ClusterInfo"/>
+<rt-require dependency="react-bootstrap/lib/Row.js" as="Row"/>
+<rt-require dependency="react-bootstrap/lib/Col.js" as="Col"/>
+
+<Row>
+  <Col md={8}>
+    <div id="map"></div>
+  </Col>
+  <Col md={4}>
+    <ClusterInfo selectedPortal="{this.state.selectedPortal}" portals="{this.state.portals}" centroid="{this.state.centroids}" />
+  </Col>
+</Row>

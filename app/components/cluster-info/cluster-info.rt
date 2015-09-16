@@ -1,0 +1,9 @@
+<rt-require dependency="react-bootstrap/lib/Panel.js" as="Panel"/>
+<rt-require dependency="react-bootstrap/lib/ListGroup.js" as="ListGroup"/>
+<rt-require dependency="react-bootstrap/lib/ListGroupItem.js" as="ListGroupItem"/>
+
+<Panel collapsible defaultExpanded header='Portals of cluster '>
+  <ListGroup fill>
+    <ListGroupItem rt-repeat="portal in this._getClusterPortals()" key="{portalIndex}">{portal.title}</ListGroupItem>
+  </ListGroup>
+</Panel>
